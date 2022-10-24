@@ -3,15 +3,15 @@ import Body from "./assets/components/Body";
 import CartWidget from "./assets/components/CartWidget";
 import Footer from "./assets/components/Footer";
 import ItemListContainer from "./assets/components/ItemListContainer";
-import ResponsiveAppBar from "./assets/components/ResponsiveAppBar";
+import Navbar from "./assets/components/Navbar";
 import "./assets/css/App.css";
 
 // Father component - smart
 export default function Pepe() {
   return (
     <>
-      <div className="AppBar">
-        <ResponsiveAppBar color={"#000000"} />
+      <div className="Navbar">
+        <Navbar color={"#000000"} />
         <CartWidget />
       </div>
       <div className="ItemList">
