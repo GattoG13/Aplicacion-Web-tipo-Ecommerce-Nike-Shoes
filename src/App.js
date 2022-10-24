@@ -6,7 +6,7 @@ import ItemListContainer from "./assets/components/ItemListContainer";
 import Navbar from "./assets/components/Navbar";
 import "./assets/css/App.css";
 
-// Father component - smart
+// Father - functions go in here
 export default function Pepe() {
   return (
     <>
