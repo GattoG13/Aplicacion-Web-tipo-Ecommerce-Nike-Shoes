@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Body from "./assets/components/Body";
+import CartWidget from "./assets/components/CartWidget";
+import Footer from "./assets/components/Footer";
+import ItemListContainer from "./assets/components/ItemListContainer";
+import ResponsiveAppBar from "./assets/components/ResponsiveAppBar";
+import "./assets/css/App.css";
 
-function App() {
+// Father component - smart
+export default function Pepe() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className="AppBar">
+        <ResponsiveAppBar color={"#000000"} />
+        <CartWidget />
+      </div>
+      <div className="ItemList">
+        <ItemListContainer greeting={true} />
+      </div>
+      <div className="Body">
+        <Body />
+      </div>
+      <div className="Footer">
+        <Footer />
+      </div>
+    </>
   );
 }
-
-export default App;
