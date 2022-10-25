@@ -1,4 +1,5 @@
 import * as React from "react";
+import Navbar from "../src/assets/css/Navbar.css";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -38,7 +39,7 @@ function Navbar({ color }) {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar className="Navbar" position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
