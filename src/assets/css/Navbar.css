@@ -1,3 +1,13 @@
-.Navbar {
-  background-color: black;
+.btn-logo {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  width: 50px;
+  height: 30px;
+  cursor: pointer;
+  padding-right: 50px;
+}
+.logo {
+  width: 50px;
+  height: 30px;
 }

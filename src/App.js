@@ -10,7 +10,7 @@ function Pepe() {
   return (
     <>
       <Navbar color={"#000000"} />
-      <ItemListContainer greeting={true} />
+      <ItemListContainer greeting={"Bienvenido"} />
       <Body />
       <Footer />
     </>

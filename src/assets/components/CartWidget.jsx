@@ -1,10 +1,20 @@
 import React from "react";
+import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
+import { Button } from "@mui/material";
 
 // Son component
 export default function CartWidget() {
   return (
     <div>
-      <img src="./assets/images/cartwidget.jpg" alt="CartWidget-icon" />
+      <Button
+        variant="outlinedSizeSmall"
+        color="primary"
+        fullWidth={false}
+        startIcon={<ShoppingCartOutlinedIcon />}
+      >
+        {" "}
+        0
+      </Button>
     </div>
   );
 }

@@ -1,11 +1,11 @@
 import React from "react";
-import ItemListContainer from "../src/assets/css/ItemListContainer.css";
+import "../css/Navbar.css";
 
 // Son component
 export default function ItemListContainer({ greeting }) {
   return (
     <div className="ItemList-container">
-      {greeting ? <p>Bienvenide</p> : <p>No sos bienvenide</p>}
+      <p>{greeting} </p>
     </div>
   );
 }
