@@ -1,0 +1,16 @@
+.footer-container {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+}
+
+.copyright-text {
+  color: white;
+  text-align: center;
+}
+.instagram-icon {
+  width: 60px;
+  height: 60px;
+}

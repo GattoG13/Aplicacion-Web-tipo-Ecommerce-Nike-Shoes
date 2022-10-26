@@ -5,7 +5,7 @@ import "../css/Navbar.css";
 export default function ItemListContainer({ greeting }) {
   return (
     <div className="ItemList-container">
-      <p>{greeting} </p>
+      <p style={{ color: "#f00" }}>{greeting} </p>
     </div>
   );
 }
