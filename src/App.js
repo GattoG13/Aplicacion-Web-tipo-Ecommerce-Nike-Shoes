@@ -7,12 +7,13 @@ import "./assets/css/App.css";
 
 // Father - functions go in here
 function Pepe() {
-  // function sumar() {}
-  // function restar() {}
+  const AddCart = () => {
+    alert("Hola");
+  };
   return (
     <>
       <Navbar />
-      <ItemCounter stock={10} initial={0} />
+      <ItemCounter stock={10} initial={0} AddCart={AddCart()} />
       <ItemListContainer greeting={"Bienvenido"} />
       <Footer />
     </>
