@@ -5,7 +5,7 @@ import "../css/Navbar.css";
 const Logo = () => {
   return (
     <button className="btn-logo">
-      <img className="logo" src={logo}></img>
+      <img className="logo" src={logo} alt="Nike logo"></img>
     </button>
   );
 };

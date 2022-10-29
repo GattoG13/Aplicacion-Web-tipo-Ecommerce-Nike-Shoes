@@ -13,7 +13,14 @@ function Navbar() {
         <Toolbar>
           <IconButton aria-label="app" color="inherit"></IconButton>
           <Logo />
-          <Tabs textColor="inherit" value={0} indicatorColor="secondary">
+          <Tabs
+            textColor="inherit"
+            sx={{
+              "&:hover": {
+                backgroundColor: "secondary",
+              },
+            }}
+          >
             <Tab label="Products" />
             <Tab label="Categories" />
             <Tab label="Contact Us" />

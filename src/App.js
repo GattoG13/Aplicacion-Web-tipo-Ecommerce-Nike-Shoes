@@ -7,14 +7,14 @@ import "./assets/css/App.css";
 
 // Father - functions go in here
 function Pepe() {
-  const AddCart = () => {
-    alert("Hola");
+  const AddCart = (quantity) => {
+    alert("Usted a agregado " + quantity + " items al carrito");
   };
   return (
     <>
       <Navbar />
-      <ItemCounter stock={10} initial={0} AddCart={AddCart()} />
-      <ItemListContainer greeting={"Bienvenido"} />
+      <ItemCounter stock={10} initial={0} AddCart={AddCart} />
+      <ItemListContainer />
       <Footer />
     </>
   );
