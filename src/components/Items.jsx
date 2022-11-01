@@ -1,11 +1,11 @@
 import { Button } from "@mui/material";
 import React from "react";
 import "../assets/css/index.css";
-function Items({ title, size, color, price, pictureURL, id }) {
+function Items({ title, size, color, price, image, id }) {
   return (
     <div className="item-container">
       <div>
-        <img src={pictureURL} alt="product" />
+        <img src={image} alt="product" />
       </div>
       <h2>{title}</h2>
       <p>Sizes: {size}</p>
