@@ -1,8 +1,8 @@
 import React from "react";
-import Footer from "../src/assets/components/Footer";
-import ItemListContainer from "../src/assets/components/ItemListContainer";
-import Navbar from "../src/assets/components/Navbar";
-import ItemCounter from "./assets/components/ItemCounter";
+import Navbar from "../src/components/Navbar";
+import Footer from "../src/components/Footer";
+import ItemListContainer from "../src/components/ItemListContainer";
+import ItemCounter from "../src/components/ItemCounter";
 import "./assets/css/App.css";
 
 // Father - functions go in here
@@ -14,7 +14,7 @@ function Pepe() {
     <>
       <Navbar />
       <ItemCounter stock={10} initial={0} AddCart={AddCart} />
-      <ItemListContainer />
+      <ItemListContainer greeting={"Bienvenido"} />
       <Footer />
     </>
   );

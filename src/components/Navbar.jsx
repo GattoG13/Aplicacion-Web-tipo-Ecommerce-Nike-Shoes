@@ -1,6 +1,6 @@
 import { AppBar, Button, IconButton, Tab, Tabs, Toolbar } from "@mui/material";
 import React, { useState } from "react";
-import "../css/Navbar.css";
+import "../assets/css/Navbar.css";
 import CartWidget from "./CartWidget";
 import Logo from "./Logo";
 

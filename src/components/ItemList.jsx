@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import Airmax1 from "../images/airmax-greyred.svg";
-import Airmax2 from "../images/airmaxdama-white.svg";
-import Jordan1 from "../images/nikejordan-twhite.svg";
-import Airmax3 from "../images/airmax-whitered.svg";
-import Jordan2 from "../images/nikejordan-redwhite.svg";
-import Airmax4 from "../images/airmax-blackwhite.svg";
-import Jordan3 from "../images/nikejordan-whitegrey.svg";
+import Airmax1 from "../assets/images/airmax-greyred.svg";
+import Airmax2 from "../assets/images/airmaxdama-white.svg";
+import Jordan1 from "../assets/images/nikejordan-twhite.svg";
+import Airmax3 from "../assets/images/airmax-whitered.svg";
+import Jordan2 from "../assets/images/nikejordan-redwhite.svg";
+import Airmax4 from "../assets/images/airmax-blackwhite.svg";
+import Jordan3 from "../assets/images/nikejordan-whitegrey.svg";
 import Items from "./Items";
 
 function ItemList() {

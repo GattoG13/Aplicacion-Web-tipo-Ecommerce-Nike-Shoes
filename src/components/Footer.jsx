@@ -1,6 +1,6 @@
 import React from "react";
 import InstagramIcon from "@mui/icons-material/Instagram";
-import "../css/Footer.css";
+import "../assets/css/Footer.css";
 
 // Son component
 export default function Footer() {

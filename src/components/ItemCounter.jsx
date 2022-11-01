@@ -1,6 +1,6 @@
 import { Button } from "@mui/material";
 import React, { useState, useEffect } from "react";
-import "../css/ItemCounter.css";
+import "../assets/css/ItemCounter.css";
 
 // Son component
 export default function ItemCounter({ stock, initial, AddCart }) {
