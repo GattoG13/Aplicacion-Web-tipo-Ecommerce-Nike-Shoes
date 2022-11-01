@@ -8,7 +8,7 @@ function Items({ title, size, color, price, image, id }) {
         <img src={image} alt="product" />
       </div>
       <h2>{title}</h2>
-      <p>Sizes: {size}</p>
+      <p>Size: {size}</p>
       <p>Color: {color}</p>
       <p>Price: {price}</p>
       <div>
