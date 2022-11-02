@@ -1,6 +1,7 @@
 import { Button } from "@mui/material";
 import React from "react";
 import "../assets/css/index.css";
+
 function Items({ title, size, color, price, image, id }) {
   return (
     <div className="item-container">

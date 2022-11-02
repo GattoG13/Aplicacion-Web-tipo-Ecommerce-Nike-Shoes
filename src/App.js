@@ -3,14 +3,16 @@ import Navbar from "../src/components/Navbar";
 import Footer from "../src/components/Footer";
 import ItemListContainer from "../src/components/ItemListContainer";
 import ItemCounter from "../src/components/ItemCounter";
-import "./assets/css/App.css";
 import TestPokeApi from "./components/TestPokeApi";
+import "./assets/css/App.css";
 
 // Father - functions go in here
-function Pepe() {
+function App() {
+  //* El nombre del componente y la funcion SIEMPRE igual
   const AddCart = (quantity) => {
     alert("Usted a agregado " + quantity + " items al carrito");
   };
+
   return (
     <>
       <Navbar />
@@ -22,4 +24,4 @@ function Pepe() {
   );
 }
 
-export default Pepe;
+export default App;

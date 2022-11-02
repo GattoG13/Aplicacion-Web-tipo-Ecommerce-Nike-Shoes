@@ -68,6 +68,9 @@ function ItemList() {
       pictureURL: Jordan3,
     },
   ];
+  
+  //* Esto de arriba lo podemos tirar en un archivo.json e importarlo
+
   const [Products, setProducts] = useState([]);
   useEffect(() => {
     const callback = new Promise((res, rej) => {
