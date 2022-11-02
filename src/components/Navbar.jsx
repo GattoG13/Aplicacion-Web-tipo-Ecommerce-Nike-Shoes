@@ -1,5 +1,5 @@
 import { AppBar, Button, IconButton, Tab, Tabs, Toolbar } from "@mui/material";
-import React, { useState } from "react";
+import React, { useState } from "react"; //! Preocura borrar lo que no se use, instalate y configura @eslint
 import "../assets/css/Navbar.css";
 import CartWidget from "./CartWidget";
 import Logo from "./Logo";
