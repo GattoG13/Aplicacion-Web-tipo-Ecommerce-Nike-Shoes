@@ -7,7 +7,7 @@ function ItemList() {
   const { idcategory } = useParams;
   const [data, setData] = useState([]);
   useEffect(() => {
-    getCategory()
+    getCategory(idcategory)
       .then((res) => {
         if (idcategory) {
           setData(res.filter((item) => item.category == idcategory));

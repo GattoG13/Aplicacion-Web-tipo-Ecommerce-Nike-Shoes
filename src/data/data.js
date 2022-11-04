@@ -82,9 +82,9 @@ export const getId = (idproduct) => {
   });
 };
 
-export const getCategory = (category) => {
+export const getCategory = (idcategory) => {
   return new Promise((resolve) => {
-    shoes.filter((product) => product.category === category);
+    // shoes.filter((product) => product.category === idcategory);
     setTimeout(() => {
       resolve(shoes);
     }, 2000);
