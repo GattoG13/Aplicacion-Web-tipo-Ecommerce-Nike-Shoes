@@ -6,16 +6,19 @@ import "../assets/css/Footer.css";
 export default function Footer() {
   return (
     <div className="footer-container">
-      <a href="https://www.instagram.com/nike/">
-        <InstagramIcon
-          className="instagram-icon"
-          variant="outlinedSizeSmall"
-          color="inherit"
-          fullWidth={false}
-        />
-      </a>
+      <div className="instagram-icon">
+        <a href="https://www.instagram.com/nike/">
+          <InstagramIcon
+            variant="outlinedSizeSmall"
+            color="inherit"
+            fullWidth={false}
+          />
+        </a>
+      </div>
       <div>
-        <p className="copyright-text">© 2022 Nike, Inc. All right reserved.</p>
+        <div className="copyright-text">
+          <p>© 2022 Nike, Inc. All right reserved.</p>
+        </div>
       </div>
     </div>
   );

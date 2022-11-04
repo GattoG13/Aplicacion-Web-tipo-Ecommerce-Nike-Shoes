@@ -24,7 +24,7 @@ function Items({ title, size, color, price, image, id }) {
           variant="contained"
           id={id}
         >
-          Buy
+          DETAILS
         </Button>
       </div>
     </div>

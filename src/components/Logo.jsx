@@ -1,6 +1,5 @@
 import React from "react";
 import logo from "../assets/images/logonike-def.png";
-import "../assets/css/App.css";
 
 const Logo = () => {
   return (

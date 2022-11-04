@@ -1,12 +1,12 @@
 import { AppBar, Button, IconButton, Tab, Tabs, Toolbar } from "@mui/material";
-import React, { useState } from "react";
+import React from "react";
 import "../assets/css/Navbar.css";
 import CartWidget from "./CartWidget";
+import Contacto from "./Contacto";
+import ItemListContainer from "./ItemListContainer";
 import Logo from "./Logo";
 
 function Navbar() {
-  // const [value, setValue] = useState();
-  // let tab1 = "#fff";
   return (
     <div className="Navbar">
       <AppBar position="sticky" sx={{ background: "#000" }}>
@@ -21,9 +21,9 @@ function Navbar() {
               },
             }}
           >
-            <Tab label="Products" />
+            <Tab label="Products" to={<ItemListContainer />} />
             <Tab label="Categories" />
-            <Tab label="Contact Us" />
+            <Tab label="Contact Us" LinkComponent={<Contacto />} />
           </Tabs>
           <Button
             sx={{

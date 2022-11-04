@@ -2,7 +2,6 @@ import { Button } from "@mui/material";
 import React, { useState, useEffect } from "react";
 import "../assets/css/ItemCounter.css";
 
-// Son component
 export default function ItemCounter({ stock, initial, AddCart }) {
   const [cont, setCont] = useState(parseInt(initial));
   const sumar = () => {
@@ -34,7 +33,7 @@ export default function ItemCounter({ stock, initial, AddCart }) {
         sx={{ background: "#ddd" }}
         onClick={() => AddCart(cont)}
       >
-        Agregar al carrito
+        Add to Cart
       </Button>
     </div>
   );

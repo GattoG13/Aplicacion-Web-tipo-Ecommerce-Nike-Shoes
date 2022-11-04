@@ -1,23 +1,28 @@
 import React from "react";
-import Navbar from "../src/components/Navbar";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Footer from "../src/components/Footer";
 import ItemListContainer from "../src/components/ItemListContainer";
-import ItemCounter from "../src/components/ItemCounter";
-import "./assets/css/App.css";
-import TestPokeApi from "./components/TestPokeApi";
+import Navbars from "../src/components/Navbars";
+import Checkout from "./components/Checkout";
+import Contact from "./components/Contact";
+import Airmax from "./components/Airmax";
+import Jordan from "./components/Jordan";
+import ItemDetailContainer from "./components/ItemDetailContainer";
 
-// Father - functions go in here
 function Pepe() {
-  const AddCart = (quantity) => {
-    alert("Usted a agregado " + quantity + " items al carrito");
-  };
   return (
     <>
-      <Navbar />
-      <TestPokeApi />
-      <ItemCounter stock={10} initial={0} AddCart={AddCart} />
-      <ItemListContainer greeting={"Bienvenido"} />
-      <Footer />
+      <BrowserRouter>
+        <Navbars />
+        <Routes>
+          <Route path="/" element={<ItemListContainer />} />
+          <Route path="/checkout" element={<Checkout />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/category/:idcategory" element={<ItemListContainer />} />
+          {/* <Route path="/item/:iditem" element={<ItemDetailContainer />} /> */}
+        </Routes>
+        <Footer />
+      </BrowserRouter>
     </>
   );
 }
