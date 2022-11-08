@@ -5,7 +5,7 @@ import ItemListContainer from "../src/components/ItemListContainer";
 import Navbars from "../src/components/Navbars";
 import Checkout from "./components/Checkout";
 import Contact from "./components/Contact";
-import ItemDetail from "./components/ItemDetail";
+import ItemDetailContainer from "./components/ItemDetailContainer";
 
 function Pepe() {
   return (
@@ -17,7 +17,7 @@ function Pepe() {
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/category/:idcategory" element={<ItemListContainer />} />
-          <Route path="/item/:iditem" element={<ItemDetail />} />
+          <Route path="/item/:iditem" element={<ItemDetailContainer />} />
         </Routes>
         <Footer />
       </BrowserRouter>

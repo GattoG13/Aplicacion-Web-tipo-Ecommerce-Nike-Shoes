@@ -5,19 +5,25 @@ import { useParams } from "react-router-dom";
 
 export default function ItemDetailContainer() {
   const { iditem } = useParams();
-  const [data, setData] = useState([]);
+  const [data, setData] = useState({});
   useEffect(() => {
-    getProduct()
-      .then((res) => {
-        setData(res.find((item) => item.id === iditem));
-      })
-      .catch((error) => {
-        console.log(error);
-      })
-      .finally(() => {
-        console.log("finish");
-      });
+    const getShoes = new Promise((res, rej) => {
+      res(getProduct());
+    });
+    getShoes.then((res) => {
+      setData(res.find((item) => item.id === iditem));
+    });
+    // .catch((error) => {
+    //   console.log(error);
+    // })
+    // .finally(() => {
+    //   console.log("finish");
+    // });
   }, [iditem]);
 
-  return <ItemDetail productos={data} />;
+  return (
+    <div>
+      <ItemDetail productos={data} />
+    </div>
+  );
 }

@@ -1,7 +1,6 @@
 import { Button } from "@mui/material";
 import React from "react";
 import { Link } from "react-router-dom";
-
 import "../assets/css/index.css";
 
 function Items({ title, size, color, price, image, id }) {
@@ -13,7 +12,7 @@ function Items({ title, size, color, price, image, id }) {
       <p>Color: {color}</p>
       <p>Price: {price}</p>
       <div>
-        <Link to="/item/:iditem">
+        <Link to={`/item/${id}`}>
           <Button
             sx={{
               backgroundColor: "#000",
