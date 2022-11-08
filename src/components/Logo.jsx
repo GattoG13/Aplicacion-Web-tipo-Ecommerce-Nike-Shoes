@@ -1,5 +1,6 @@
 import React from "react";
 import logo from "../assets/images/logonike-def.png";
+import "../assets/css/Navbar.css";
 
 const Logo = () => {
   return (

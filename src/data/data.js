@@ -73,18 +73,8 @@ const shoes = [
   },
 ];
 
-export const getId = (idproduct) => {
+export const getProduct = () => {
   return new Promise((resolve) => {
-    shoes.find((product) => product.id === idproduct);
-    setTimeout(() => {
-      resolve(shoes);
-    }, 2000);
-  });
-};
-
-export const getCategory = (idcategory) => {
-  return new Promise((resolve) => {
-    // shoes.filter((product) => product.category === idcategory);
     setTimeout(() => {
       resolve(shoes);
     }, 2000);

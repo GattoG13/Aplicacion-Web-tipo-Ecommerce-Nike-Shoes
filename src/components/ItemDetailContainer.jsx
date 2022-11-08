@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from "react";
-import { getId } from "../data/data";
+import { getProduct } from "../data/data";
 import ItemDetail from "./ItemDetail";
+import { useParams } from "react-router-dom";
 
 export default function ItemDetailContainer() {
+  const { iditem } = useParams();
   const [data, setData] = useState([]);
   useEffect(() => {
-    getId()
+    getProduct()
       .then((res) => {
-        setData(res);
+        setData(res.find((item) => item.id === iditem));
       })
       .catch((error) => {
         console.log(error);
@@ -15,7 +17,7 @@ export default function ItemDetailContainer() {
       .finally(() => {
         console.log("finish");
       });
-  }, []);
+  }, [iditem]);
 
   return <ItemDetail productos={data} />;
 }

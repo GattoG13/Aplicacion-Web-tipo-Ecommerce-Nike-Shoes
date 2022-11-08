@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react";
-import { getCategory, getId } from "../data/data";
+import { getProduct } from "../data/data";
 import Items from "./Items";
 import { useParams } from "react-router-dom";
 
 function ItemList() {
-  const { idcategory } = useParams;
+  const { idcategory } = useParams();
   const [data, setData] = useState([]);
   useEffect(() => {
-    getCategory(idcategory)
+    getProduct(idcategory)
       .then((res) => {
         if (idcategory) {
-          setData(res.filter((item) => item.category == idcategory));
+          setData(res.filter((item) => item.category === idcategory));
         } else {
           setData(res);
         }
@@ -25,8 +25,7 @@ function ItemList() {
 
   return data.map((item) => {
     return (
-      <div key={item.id}>
-        {/* {!data.length && "Loading..."} */}
+      <div className="item-container2" key={item.id}>
         <Items
           image={item.pictureURL}
           title={item.title}

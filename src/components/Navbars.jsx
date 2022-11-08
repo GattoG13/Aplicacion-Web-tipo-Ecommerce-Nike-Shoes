@@ -1,5 +1,4 @@
 import AdbIcon from "@mui/icons-material/Adb";
-import MenuIcon from "@mui/icons-material/Menu";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
@@ -10,8 +9,10 @@ import MenuItem from "@mui/material/MenuItem";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import * as React from "react";
-import CartWidget from "./CartWidget";
 import { Link } from "react-router-dom";
+import CartWidget from "./CartWidget";
+import Logo from "./Logo";
+import ClearAllIcon from "@mui/icons-material/ClearAll";
 
 const pages = [
   { label: "Home", link: "/" },
@@ -41,10 +42,10 @@ export default function Navbars() {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar sx={{ backgroundColor: "#000" }} position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+          <Logo />
           <Typography
             variant="h6"
             noWrap
@@ -55,12 +56,12 @@ export default function Navbars() {
               display: { xs: "none", md: "flex" },
               fontFamily: "monospace",
               fontWeight: 700,
-              letterSpacing: ".3rem",
+              letterSpacing: ".1rem",
               color: "inherit",
               textDecoration: "none",
             }}
           >
-            LOGO
+            NIKE - SHOES
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -72,7 +73,7 @@ export default function Navbars() {
               onClick={handleOpenNavMenu}
               color="inherit"
             >
-              <MenuIcon />
+              <ClearAllIcon />
             </IconButton>
             <Menu
               id="menu-appbar"
@@ -101,7 +102,7 @@ export default function Navbars() {
               ))}
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
+
           <Typography
             variant="h5"
             noWrap
@@ -125,12 +126,15 @@ export default function Navbars() {
               <Button
                 key={page.label}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
+                sx={{
+                  color: "#ffffff",
+                  my: 2,
+                  color: "white",
+                  display: "block",
+                }}
               >
                 {" "}
-                <Link sx={{ color: "#ffffff" }} to={page.link}>
-                  {page.label}
-                </Link>
+                <Link to={page.link}>{page.label}</Link>
               </Button>
             ))}
           </Box>

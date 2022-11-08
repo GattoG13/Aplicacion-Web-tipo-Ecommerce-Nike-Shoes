@@ -5,9 +5,7 @@ import ItemListContainer from "../src/components/ItemListContainer";
 import Navbars from "../src/components/Navbars";
 import Checkout from "./components/Checkout";
 import Contact from "./components/Contact";
-import Airmax from "./components/Airmax";
-import Jordan from "./components/Jordan";
-import ItemDetailContainer from "./components/ItemDetailContainer";
+import ItemDetail from "./components/ItemDetail";
 
 function Pepe() {
   return (
@@ -19,7 +17,7 @@ function Pepe() {
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/category/:idcategory" element={<ItemListContainer />} />
-          {/* <Route path="/item/:iditem" element={<ItemDetailContainer />} /> */}
+          <Route path="/item/:iditem" element={<ItemDetail />} />
         </Routes>
         <Footer />
       </BrowserRouter>
