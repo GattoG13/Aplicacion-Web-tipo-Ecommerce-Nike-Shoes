@@ -4,6 +4,9 @@
   background-color: black;
   display: flex;
   justify-content: center;
+
+  flex-grow: 1;
+  margin-top: auto;
 }
 
 .copyright-text {

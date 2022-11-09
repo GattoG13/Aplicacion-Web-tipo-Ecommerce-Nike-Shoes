@@ -11,7 +11,7 @@ function Items({ title, size, color, price, image, id }) {
       <p>Size: {size}</p>
       <p>Color: {color}</p>
       <p>Price: {price}</p>
-      <div>
+      <div className="details-btn">
         <Link to={`/item/${id}`}>
           <Button
             sx={{

@@ -11,14 +11,15 @@ export default function ItemDetailContainer() {
       res(getProduct());
     });
     getShoes.then((res) => {
-      setData(res.find((item) => item.id === iditem));
+      setData(res.find((item) => item.id === parseInt(iditem)));
     });
-    // .catch((error) => {
-    //   console.log(error);
-    // })
-    // .finally(() => {
-    //   console.log("finish");
-    // });
+    getShoes
+      .catch((error) => {
+        console.log(error);
+      })
+      .finally(() => {
+        console.log("finish");
+      });
   }, [iditem]);
 
   return (

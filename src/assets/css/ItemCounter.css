@@ -1,3 +1,11 @@
 .span-counter {
   width: 100px;
+  padding-bottom: 10px;
+}
+
+.itembox1-details {
+  padding-bottom: 10px;
+}
+.itemcount-details {
+  padding-bottom: 10px;
 }
