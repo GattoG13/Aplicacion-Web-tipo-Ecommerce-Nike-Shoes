@@ -3,7 +3,7 @@ import { getProduct } from "../data/data";
 import Items from "./Items";
 import { useParams } from "react-router-dom";
 
-function ItemList() {
+const ItemList = () => {
   const { idcategory } = useParams();
   const [data, setData] = useState([]);
   useEffect(() => {
@@ -37,6 +37,6 @@ function ItemList() {
       </div>
     );
   });
-}
+};
 
 export default ItemList;

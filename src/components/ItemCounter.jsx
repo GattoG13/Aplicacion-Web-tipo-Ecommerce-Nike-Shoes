@@ -2,7 +2,7 @@ import { Button } from "@mui/material";
 import React, { useState, useEffect } from "react";
 import "../assets/css/ItemCounter.css";
 
-export default function ItemCounter({ stock, initial, AddCart }) {
+const ItemCounter = ({ stock, initial, AddCart }) => {
   const [cont, setCont] = useState(parseInt(initial));
   const sumar = () => {
     setCont(cont + 1);
@@ -37,4 +37,6 @@ export default function ItemCounter({ stock, initial, AddCart }) {
       </Button>
     </div>
   );
-}
+};
+
+export default ItemCounter;

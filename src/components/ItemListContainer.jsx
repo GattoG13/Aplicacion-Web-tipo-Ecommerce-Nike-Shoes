@@ -1,10 +1,12 @@
 import React from "react";
 import ItemList from "./ItemList";
 
-export default function ItemListContainer() {
+const ItemListContainer = () => {
   return (
     <div className="ItemList-container">
       <ItemList />
     </div>
   );
-}
+};
+
+export default ItemListContainer;

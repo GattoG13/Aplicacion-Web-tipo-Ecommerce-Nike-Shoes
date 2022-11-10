@@ -3,7 +3,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../assets/css/index.css";
 
-function Items({ title, size, color, price, image, id }) {
+const Items = ({ title, size, color, price, image, id }) => {
   return (
     <div className="item-container">
       <img className="images" src={image} alt="product" />
@@ -31,6 +31,6 @@ function Items({ title, size, color, price, image, id }) {
       </div>
     </div>
   );
-}
+};
 
 export default Items;

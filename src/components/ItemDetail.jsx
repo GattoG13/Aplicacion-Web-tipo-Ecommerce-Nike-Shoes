@@ -5,7 +5,7 @@ import "../assets/css/index.css";
 import ItemCounter from "./ItemCounter";
 import "../assets/css/ItemCounter.css";
 
-function ItemDetail({ productos }) {
+const ItemDetail = ({ productos }) => {
   const AddCart = (quantity) => {
     alert("Usted a agregado " + quantity + " items al carrito");
   };
@@ -44,6 +44,6 @@ function ItemDetail({ productos }) {
       )}
     </div>
   );
-}
+};
 
 export default ItemDetail;

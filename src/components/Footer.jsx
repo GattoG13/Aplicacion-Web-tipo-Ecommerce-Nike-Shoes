@@ -3,7 +3,7 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import "../assets/css/Footer.css";
 
 // Son component
-export default function Footer() {
+const Footer = () => {
   return (
     <div className="footer-container">
       <div className="instagram-icon">
@@ -22,4 +22,6 @@ export default function Footer() {
       </div>
     </div>
   );
-}
+};
+
+export default Footer;

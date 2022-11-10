@@ -1,4 +1,4 @@
-import AdbIcon from "@mui/icons-material/Adb";
+import ClearAllIcon from "@mui/icons-material/ClearAll";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
@@ -12,7 +12,6 @@ import * as React from "react";
 import { Link } from "react-router-dom";
 import CartWidget from "./CartWidget";
 import Logo from "./Logo";
-import ClearAllIcon from "@mui/icons-material/ClearAll";
 
 const pages = [
   { label: "Home", link: "/" },
@@ -22,7 +21,7 @@ const pages = [
   { label: "Contact", link: "/contact" },
 ];
 
-export default function Navbars() {
+const Navbars = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -146,4 +145,6 @@ export default function Navbars() {
       </Container>
     </AppBar>
   );
-}
+};
+
+export default Navbars;

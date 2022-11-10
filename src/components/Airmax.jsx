@@ -1,7 +1,7 @@
 import React from "react";
 
-function Airmax() {
+const Airmax = () => {
   return <div>Airmax!!!</div>;
-}
+};
 
 export default Airmax;

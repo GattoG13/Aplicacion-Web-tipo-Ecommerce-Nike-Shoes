@@ -3,7 +3,7 @@ import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import { Button } from "@mui/material";
 
 // Son component
-export default function CartWidget() {
+const CartWidget = () => {
   return (
     <div>
       <Button
@@ -17,4 +17,6 @@ export default function CartWidget() {
       </Button>
     </div>
   );
-}
+};
+
+export default CartWidget;

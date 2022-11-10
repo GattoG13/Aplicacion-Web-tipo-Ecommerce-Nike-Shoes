@@ -1,7 +1,7 @@
 import React from "react";
 
-function Jordan() {
+const Jordan = () => {
   return <div>Jordans!!</div>;
-}
+};
 
 export default Jordan;

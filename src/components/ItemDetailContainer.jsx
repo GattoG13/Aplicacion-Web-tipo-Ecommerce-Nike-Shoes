@@ -3,7 +3,7 @@ import { getProduct } from "../data/data";
 import ItemDetail from "./ItemDetail";
 import { useParams } from "react-router-dom";
 
-export default function ItemDetailContainer() {
+const ItemDetailContainer = () => {
   const { iditem } = useParams();
   const [data, setData] = useState({});
   useEffect(() => {
@@ -27,4 +27,6 @@ export default function ItemDetailContainer() {
       <ItemDetail productos={data} />
     </div>
   );
-}
+};
+
+export default ItemDetailContainer;
