@@ -24,22 +24,34 @@ const ItemDetail = ({ productos }) => {
           key={productos.id}
         >
           <img className="images" src={productos.pictureURL} alt="product" />
-          <h2>{productos.title}</h2>
-          <Typography>Size: {productos.size}</Typography>
-          <Typography>Color: {productos.color}</Typography>
-          <Typography>Price: {productos.price}</Typography>
+          <Typography
+            sx={{ color: whiteMode ? "#000" : "#f9f9f9" }}
+            variant="h5"
+          >
+            {productos.title}
+          </Typography>
+          <Typography sx={{ color: whiteMode ? "#000" : "#f9f9f9" }}>
+            Size: {productos.size}
+          </Typography>
+          <Typography sx={{ color: whiteMode ? "#000" : "#f9f9f9" }}>
+            Color: {productos.color}
+          </Typography>
+          <Typography sx={{ color: whiteMode ? "#000" : "#f9f9f9" }}>
+            Price: {productos.price}
+          </Typography>
           <Box className="itembox1-details">
             <Box className="itemcount-details">
               <ItemCounter initial={0} stock={10} AddCart={AddCart} />
             </Box>
-            <Link to="/checkout">
+            <Link sx={{ color: whiteMode ? "#000" : "#f9f9f9" }} to="/checkout">
               <Button
                 sx={{
-                  backgroundColor: "#000",
+                  backgroundColor: whiteMode ? "#000" : "#f9f9f9",
                   borderRadius: 2,
+                  color: whiteMode ? "#f9f9f9" : "#000",
                   "&:hover": {
                     backgroundColor: "inherit",
-                    color: "#000",
+                    color: "inherit",
                   },
                 }}
                 variant="contained"

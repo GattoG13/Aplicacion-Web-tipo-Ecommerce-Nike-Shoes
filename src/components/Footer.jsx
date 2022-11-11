@@ -9,7 +9,10 @@ const Footer = () => {
   const { whiteMode } = useContext(contextoGeneral);
 
   return (
-    <Box sx={{ backgroundColor: whiteMode ? "#f9f9f9" : "#000" }}>
+    <Box
+      className="footer-container"
+      sx={{ backgroundColor: whiteMode ? "#f9f9f9" : "#000" }}
+    >
       <a className="instagram-icon" href="https://www.instagram.com/nike/">
         <InstagramIcon
           variant="outlinedSizeSmall"
@@ -18,7 +21,12 @@ const Footer = () => {
         />
       </a>
       <Box className="copyright-text">
-        <Typography sx={{ color: whiteMode ? "#000" : "#f9f9f9" }}>
+        <Typography
+          sx={{
+            color: whiteMode ? "#000" : "#f9f9f9",
+            "&:hover": { color: "inherit" },
+          }}
+        >
           © 2022 Nike, Inc. All right reserved.
         </Typography>
       </Box>

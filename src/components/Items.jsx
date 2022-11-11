@@ -14,7 +14,7 @@ const Items = ({ title, size, color, price, image, id }) => {
       className="item-container"
     >
       <img className="images" src={image} alt="product" />
-      <Typography sx={{ color: whiteMode ? "#000" : "#f9f9f9" }} component="h2">
+      <Typography sx={{ color: whiteMode ? "#000" : "#f9f9f9" }} variant="h5">
         {title}
       </Typography>
       <Typography sx={{ color: whiteMode ? "#000" : "#f9f9f9" }}>
@@ -33,14 +33,22 @@ const Items = ({ title, size, color, price, image, id }) => {
               backgroundColor: whiteMode ? "#000" : "#f9f9f9",
               borderRadius: 2,
               "&:hover": {
-                backgroundColor: "inherit",
-                color: "#000",
+                backgroundColor: "#f9f9f9",
+                color: "inherit",
               },
             }}
             variant="contained"
             id={id}
           >
-            <Typography sx={{ color: whiteMode ? "#f9f9f9" : "#f9f9f9" }}>
+            <Typography
+              sx={{
+                color: whiteMode ? "#f9f9f9" : "#000",
+                "&:hover": {
+                  backgroundColor: "inherit",
+                  color: "inherit",
+                },
+              }}
+            >
               {" "}
               DETAILS
             </Typography>

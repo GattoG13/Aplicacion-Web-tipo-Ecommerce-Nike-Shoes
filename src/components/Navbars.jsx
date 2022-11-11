@@ -74,6 +74,7 @@ const Navbars = () => {
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
+              sx={{ color: whiteMode ? "#000" : "#f9f9f9" }}
               size="large"
               aria-label="account of current user"
               aria-controls="menu-appbar"
@@ -123,7 +124,7 @@ const Navbars = () => {
               fontFamily: "monospace",
               fontWeight: 700,
               letterSpacing: ".2rem",
-              color: whiteMode ? "#f9f9f9" : "#000",
+              color: whiteMode ? "#000" : "#f9f9f9",
               textDecoration: "none",
             }}
           >
