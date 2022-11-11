@@ -1,11 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import ItemList from "./ItemList";
+import Box from "@mui/material/Box";
+import { contextoGeneral } from "../App.js";
 
 const ItemListContainer = () => {
+  const { whiteMode } = useContext(contextoGeneral);
+
   return (
-    <div className="ItemList-container">
+    <Box
+      sx={{ backgroundColor: whiteMode ? "#f9f9f9" : "#000" }}
+      className="ItemList-container"
+    >
       <ItemList />
-    </div>
+    </Box>
   );
 };
 

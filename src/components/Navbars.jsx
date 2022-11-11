@@ -6,10 +6,12 @@ import Container from "@mui/material/Container";
 import IconButton from "@mui/material/IconButton";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
+import Switch from "@mui/material/Switch";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import * as React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { contextoGeneral } from "../App.js";
 import CartWidget from "./CartWidget";
 import Logo from "./Logo";
 
@@ -22,6 +24,8 @@ const pages = [
 ];
 
 const Navbars = () => {
+  const { whiteMode, setWhiteMode } = useContext(contextoGeneral);
+
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -41,10 +45,15 @@ const Navbars = () => {
   };
 
   return (
-    <AppBar sx={{ backgroundColor: "#000" }} position="static">
+    <AppBar
+      sx={{ backgroundColor: whiteMode ? "#f9f9f9" : "#000" }}
+      position="static"
+    >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <Logo />
+          <Link to="/">
+            <Logo />
+          </Link>
           <Typography
             variant="h6"
             noWrap
@@ -56,7 +65,7 @@ const Navbars = () => {
               fontFamily: "monospace",
               fontWeight: 700,
               letterSpacing: ".1rem",
-              color: "inherit",
+              color: whiteMode ? "#000" : "#f9f9f9",
               textDecoration: "none",
             }}
           >
@@ -114,7 +123,7 @@ const Navbars = () => {
               fontFamily: "monospace",
               fontWeight: 700,
               letterSpacing: ".2rem",
-              color: "inherit",
+              color: whiteMode ? "#f9f9f9" : "#000",
               textDecoration: "none",
             }}
           >
@@ -128,7 +137,6 @@ const Navbars = () => {
                 sx={{
                   color: "#ffffff",
                   my: 2,
-                  color: "white",
                   display: "block",
                 }}
               >
@@ -137,9 +145,16 @@ const Navbars = () => {
               </Button>
             ))}
           </Box>
+          <Typography sx={{ color: whiteMode ? "#000" : "#f9f9f9" }}>
+            White Mode{" "}
+          </Typography>
+          <Switch
+            color="secondary"
+            onClick={() => setWhiteMode(!whiteMode)}
+          ></Switch>
 
           <Box sx={{ flexGrow: 0 }}>
-            <CartWidget />
+            <CartWidget sx={{ color: whiteMode ? "#f9f9f9" : "#000" }} />
           </Box>
         </Toolbar>
       </Container>
