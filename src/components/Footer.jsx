@@ -1,7 +1,7 @@
 import InstagramIcon from "@mui/icons-material/Instagram";
 import { Box, Typography } from "@mui/material";
 import React, { useContext } from "react";
-import { contextoGeneral } from "../App.js";
+import { contextoGeneral } from "../components/CartContext";
 import "../assets/css/Footer.css";
 
 // Son component

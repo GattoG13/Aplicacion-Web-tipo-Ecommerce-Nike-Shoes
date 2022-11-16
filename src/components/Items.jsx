@@ -3,7 +3,8 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import "../assets/css/index.css";
 import Box from "@mui/material/Box";
-import { contextoGeneral } from "../App.js";
+import { contextoGeneral } from "../components/CartContext";
+
 import Typography from "@mui/material/Typography";
 
 const Items = ({ title, size, color, price, image, id }) => {

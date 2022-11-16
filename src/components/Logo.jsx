@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import logo from "../assets/images/logonike-def.png";
 import "../assets/css/Navbar.css";
-import { contextoGeneral } from "../App.js";
+import { contextoGeneral } from "../components/CartContext";
 
 const Logo = () => {
   const { darkMode } = useContext(contextoGeneral);

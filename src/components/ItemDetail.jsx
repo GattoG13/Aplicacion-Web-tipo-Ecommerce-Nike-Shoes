@@ -1,16 +1,13 @@
 import { Box, Button, Typography } from "@mui/material";
-import React, { useContext } from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import "../assets/css/index.css";
 import ItemCounter from "./ItemCounter";
 import "../assets/css/ItemCounter.css";
-import { contextoGeneral } from "../App.js";
+import { contextoGeneral } from "../components/CartContext";
 
 const ItemDetail = ({ productos }) => {
-  const AddCart = (quantity) => {
-    alert("Usted a agregado " + quantity + " items al carrito");
-  };
-  const { whiteMode } = useContext(contextoGeneral);
+  const { whiteMode, addItem, onAdd } = useContext(contextoGeneral);
 
   return (
     <Box
@@ -41,9 +38,9 @@ const ItemDetail = ({ productos }) => {
           </Typography>
           <Box className="itembox1-details">
             <Box className="itemcount-details">
-              <ItemCounter initial={0} stock={10} AddCart={AddCart} />
+              <ItemCounter initial={0} stock={10} />
             </Box>
-            <Link sx={{ color: whiteMode ? "#000" : "#f9f9f9" }} to="/checkout">
+            <Link sx={{ color: whiteMode ? "#000" : "#f9f9f9" }}>
               <Button
                 sx={{
                   backgroundColor: whiteMode ? "#000" : "#f9f9f9",
@@ -55,8 +52,11 @@ const ItemDetail = ({ productos }) => {
                   },
                 }}
                 variant="contained"
+                onClick={() => {
+                  onAdd();
+                }}
               >
-                BUY
+                Add to Cart
               </Button>
             </Link>
           </Box>

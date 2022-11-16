@@ -11,7 +11,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import { contextoGeneral } from "../App.js";
+import { contextoGeneral } from "../components/CartContext";
 import CartWidget from "./CartWidget";
 import Logo from "./Logo";
 

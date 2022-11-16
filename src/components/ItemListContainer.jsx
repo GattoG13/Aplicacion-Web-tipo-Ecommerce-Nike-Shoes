@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import ItemList from "./ItemList";
 import Box from "@mui/material/Box";
-import { contextoGeneral } from "../App.js";
+import { contextoGeneral } from "../components/CartContext";
 
 const ItemListContainer = () => {
   const { whiteMode } = useContext(contextoGeneral);

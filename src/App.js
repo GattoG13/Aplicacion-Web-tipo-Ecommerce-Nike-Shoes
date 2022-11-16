@@ -1,20 +1,18 @@
-import React, { useState, createContext } from "react";
+import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Footer from "../src/components/Footer";
 import ItemListContainer from "../src/components/ItemListContainer";
 import Navbars from "../src/components/Navbars";
+import Cart from "./components/Cart";
+import CartContext from "./components/CartContext";
 import Checkout from "./components/Checkout";
 import Contact from "./components/Contact";
 import ItemDetailContainer from "./components/ItemDetailContainer";
 
-export const contextoGeneral = createContext();
-
 const Pepe = () => {
-  const [whiteMode, setWhiteMode] = useState(false);
-
   return (
     <>
-      <contextoGeneral.Provider value={{ whiteMode, setWhiteMode }}>
+      <CartContext>
         <BrowserRouter>
           <Navbars />
           <Routes>
@@ -26,10 +24,13 @@ const Pepe = () => {
               element={<ItemListContainer />}
             />
             <Route path="/item/:iditem" element={<ItemDetailContainer />} />
+            <Route path="/cart" element={<Cart />}>
+              {" "}
+            </Route>
           </Routes>
           <Footer />
         </BrowserRouter>
-      </contextoGeneral.Provider>
+      </CartContext>
     </>
   );
 };

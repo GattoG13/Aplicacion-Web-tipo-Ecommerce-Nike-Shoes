@@ -1,8 +1,10 @@
 import { Button } from "@mui/material";
-import React, { useState, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "../assets/css/ItemCounter.css";
+import { contextoGeneral } from "../components/CartContext";
 
-const ItemCounter = ({ stock, initial, AddCart }) => {
+const ItemCounter = ({ stock, initial }) => {
+  // const { onAdd } = useContext(contextoGeneral);
   const [cont, setCont] = useState(parseInt(initial));
   const sumar = () => {
     setCont(cont + 1);
@@ -27,13 +29,6 @@ const ItemCounter = ({ stock, initial, AddCart }) => {
         onClick={sumar}
       >
         +
-      </Button>
-      <Button
-        disabled={cont >= stock || cont <= 0}
-        sx={{ background: "#ddd" }}
-        onClick={() => AddCart(cont)}
-      >
-        Add to Cart
       </Button>
     </div>
   );
