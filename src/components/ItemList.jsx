@@ -1,39 +1,40 @@
+//@ts-check
 import React, { useEffect, useState } from "react";
 import { getProduct } from "../data/data";
 import Items from "./Items";
 import { useParams } from "react-router-dom";
+import { getFirestore, collection, getDocs } from "firebase/firestore";
 
 const ItemList = () => {
   const { idcategory } = useParams();
   const [data, setData] = useState([]);
   useEffect(() => {
-    getProduct(idcategory)
-      .then((res) => {
-        if (idcategory) {
-          setData(res.filter((item) => item.category === idcategory));
-        } else {
-          setData(res);
-        }
-      })
-      .catch((error) => {
-        console.log(error);
-      })
-      .finally(() => {
-        console.log("finish");
+    const db = getFirestore();
+    const productos = collection(db, "productos");
+    getDocs(productos).then((res) => {
+      const arrayShoes = res.docs.map((product) => {
+        return {
+          id: product.id,
+          title: product.data().title,
+          size: product.data().size,
+          color: product.data().color,
+          price: product.data().price,
+          pictureURL: product.data().pictureURL,
+          category: product.data().category,
+        };
       });
+      if (idcategory) {
+        setData(arrayShoes.filter((item) => item.category === idcategory));
+      } else {
+        setData(arrayShoes);
+      }
+    });
   }, [idcategory]);
 
   return data.map((item) => {
     return (
-      <div className="item-container2" key={item.id}>
-        <Items
-          image={item.pictureURL}
-          title={item.title}
-          size={item.size}
-          color={item.color}
-          price={item.price}
-          id={item.id}
-        />
+      <div className="item-container2">
+        <Items productos={data} />
       </div>
     );
   });

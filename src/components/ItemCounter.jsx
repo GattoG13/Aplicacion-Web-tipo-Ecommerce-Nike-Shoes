@@ -1,16 +1,22 @@
 import { Button } from "@mui/material";
 import React, { useContext, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "../assets/css/ItemCounter.css";
 import { contextoGeneral } from "../components/CartContext";
 
-const ItemCounter = ({ stock, initial }) => {
-  // const { onAdd } = useContext(contextoGeneral);
+const ItemCounter = ({ stock, initial, onAddToCart }) => {
+  const { whiteMode } = useContext(contextoGeneral);
+
   const [cont, setCont] = useState(parseInt(initial));
   const sumar = () => {
-    setCont(cont + 1);
+    if (cont < stock) {
+      setCont(cont + 1);
+    }
   };
   const restar = () => {
-    setCont(cont - 1);
+    if (cont > 1) {
+      setCont(cont - 1);
+    }
   };
 
   useEffect(() => {
@@ -30,6 +36,25 @@ const ItemCounter = ({ stock, initial }) => {
       >
         +
       </Button>
+      <Link sx={{ color: whiteMode ? "#000" : "#f9f9f9" }}>
+        <Button
+          sx={{
+            backgroundColor: whiteMode ? "#000" : "#f9f9f9",
+            borderRadius: 2,
+            color: whiteMode ? "#f9f9f9" : "#000",
+            "&:hover": {
+              backgroundColor: "inherit",
+              color: "inherit",
+            },
+          }}
+          variant="contained"
+          onClick={() => {
+            onAddToCart(cont);
+          }}
+        >
+          Add to Cart
+        </Button>
+      </Link>
     </div>
   );
 };

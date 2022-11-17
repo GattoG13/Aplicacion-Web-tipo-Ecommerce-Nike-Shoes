@@ -7,28 +7,28 @@ import { contextoGeneral } from "../components/CartContext";
 
 import Typography from "@mui/material/Typography";
 
-const Items = ({ title, size, color, price, image, id }) => {
+const Items = ({ productos }) => {
   const { whiteMode } = useContext(contextoGeneral);
   return (
     <Box
       sx={{ backgroundColor: whiteMode ? "#f9f9f9" : "#000" }}
       className="item-container"
     >
-      <img className="images" src={image} alt="product" />
+      <img className="images" src={productos.image} alt="product" />
       <Typography sx={{ color: whiteMode ? "#000" : "#f9f9f9" }} variant="h5">
-        {title}
+        {productos.title}
       </Typography>
       <Typography sx={{ color: whiteMode ? "#000" : "#f9f9f9" }}>
-        Size: {size}
+        Size: {productos.size}
       </Typography>
       <Typography sx={{ color: whiteMode ? "#000" : "#f9f9f9" }}>
-        Color: {color}
+        Color: {productos.color}
       </Typography>
       <Typography sx={{ color: whiteMode ? "#000" : "#f9f9f9" }}>
-        Price: {price}
+        Price: {productos.price}
       </Typography>
       <Box className="details-btn">
-        <Link to={`/item/${id}`}>
+        <Link to={`/item/${productos.id}`}>
           <Button
             sx={{
               backgroundColor: whiteMode ? "#000" : "#f9f9f9",
@@ -39,7 +39,7 @@ const Items = ({ title, size, color, price, image, id }) => {
               },
             }}
             variant="contained"
-            id={id}
+            id={productos.id}
           >
             <Typography
               sx={{

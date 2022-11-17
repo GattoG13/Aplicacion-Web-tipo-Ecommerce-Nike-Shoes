@@ -1,13 +1,17 @@
 import { Box, Button, Typography } from "@mui/material";
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import "../assets/css/index.css";
-import ItemCounter from "./ItemCounter";
 import "../assets/css/ItemCounter.css";
 import { contextoGeneral } from "../components/CartContext";
+import ItemCounter from "./ItemCounter";
 
 const ItemDetail = ({ productos }) => {
-  const { whiteMode, addItem, onAdd } = useContext(contextoGeneral);
+  const { whiteMode, onAdd } = useContext(contextoGeneral);
+
+  const onAddToCart = (quantity) => {
+    onAdd(quantity);
+  };
 
   return (
     <Box
@@ -38,27 +42,8 @@ const ItemDetail = ({ productos }) => {
           </Typography>
           <Box className="itembox1-details">
             <Box className="itemcount-details">
-              <ItemCounter initial={0} stock={10} />
+              <ItemCounter initial={0} stock={10} onAddToCart={onAddToCart} />
             </Box>
-            <Link sx={{ color: whiteMode ? "#000" : "#f9f9f9" }}>
-              <Button
-                sx={{
-                  backgroundColor: whiteMode ? "#000" : "#f9f9f9",
-                  borderRadius: 2,
-                  color: whiteMode ? "#f9f9f9" : "#000",
-                  "&:hover": {
-                    backgroundColor: "inherit",
-                    color: "inherit",
-                  },
-                }}
-                variant="contained"
-                onClick={() => {
-                  onAdd();
-                }}
-              >
-                Add to Cart
-              </Button>
-            </Link>
           </Box>
         </Box>
       ) : (
