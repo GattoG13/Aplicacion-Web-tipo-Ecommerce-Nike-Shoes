@@ -51,7 +51,7 @@ function Cart() {
           >
             <Typography
               sx={{
-                color: whiteMode ? "#f9f9f9" : "#000",
+                color: whiteMode ? "#000" : "#f9f9f9",
                 "&:hover": {
                   backgroundColor: "#inherit",
                   color: "inherit",

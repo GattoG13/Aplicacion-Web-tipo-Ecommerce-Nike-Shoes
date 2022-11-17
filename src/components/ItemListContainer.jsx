@@ -1,9 +1,10 @@
 //@ts-check
 import React, { useEffect, useState } from "react";
-import Items from "./Items";
+import ItemList from "./ItemList";
 import { useParams } from "react-router-dom";
 import { db } from "../index";
-import { getFirestore, collection, getDocs } from "firebase/firestore";
+import { collection, getDocs } from "firebase/firestore";
+import { Box } from "@mui/material";
 
 const ItemListContainer = () => {
   const { idcategory } = useParams();
@@ -32,9 +33,9 @@ const ItemListContainer = () => {
   }, [idcategory]);
 
   return (
-    <div className="item-container2">
-      <Items products={data} />
-    </div>
+    <Box className="item-container2">
+      <ItemList data={data} />
+    </Box>
   );
 };
 

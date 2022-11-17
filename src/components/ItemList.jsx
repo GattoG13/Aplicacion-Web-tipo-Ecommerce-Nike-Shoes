@@ -1,19 +1,18 @@
 import React, { useContext, useState } from "react";
-import ItemListContainer from "./ItemList/Container";
+import Items from "./Items";
 import Box from "@mui/material/Box";
 import { contextoGeneral } from "../components/CartContext";
 
-const ItemList = () => {
+const ItemList = ({ data }) => {
   const { whiteMode } = useContext(contextoGeneral);
-  const [data, setData] = useState([]);
-
-  return data.map((item) => {
-    <Box
-      sx={{ backgroundColor: whiteMode ? "#f9f9f9" : "#000" }}
-      className="ItemList-container"
-    >
-      <ItemListContainer />
-    </Box>;
-  });
+  return (
+    <>
+      <div>
+        {data.map((producto) => {
+          return <Items producto={producto} key={producto.id} />;
+        })}
+      </div>
+    </>
+  );
 };
 export default ItemList;
