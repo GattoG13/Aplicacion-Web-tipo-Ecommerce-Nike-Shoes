@@ -1,18 +1,40 @@
-import React, { useContext } from "react";
-import ItemList from "./ItemList";
-import Box from "@mui/material/Box";
-import { contextoGeneral } from "../components/CartContext";
+//@ts-check
+import React, { useEffect, useState } from "react";
+import Items from "./Items";
+import { useParams } from "react-router-dom";
+import { db } from "../index";
+import { getFirestore, collection, getDocs } from "firebase/firestore";
 
 const ItemListContainer = () => {
-  const { whiteMode } = useContext(contextoGeneral);
+  const { idcategory } = useParams();
+  const [data, setData] = useState([]);
+  console.log(data);
+  useEffect(() => {
+    const products = collection(db, "products");
+    getDocs(products).then((res) => {
+      const arrayShoes = res.docs.map((product) => {
+        return {
+          id: product.id,
+          title: product.data().title,
+          size: product.data().size,
+          color: product.data().color,
+          price: product.data().price,
+          pictureURL: product.data().pictureURL,
+          category: product.data().category,
+        };
+      });
+      if (idcategory) {
+        setData(arrayShoes.filter((item) => item.category === idcategory));
+      } else {
+        setData(arrayShoes);
+      }
+    });
+  }, [idcategory]);
 
   return (
-    <Box
-      sx={{ backgroundColor: whiteMode ? "#f9f9f9" : "#000" }}
-      className="ItemList-container"
-    >
-      <ItemList />
-    </Box>
+    <div className="item-container2">
+      <Items products={data} />
+    </div>
   );
 };
 
