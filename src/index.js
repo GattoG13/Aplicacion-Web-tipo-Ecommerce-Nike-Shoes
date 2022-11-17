@@ -4,6 +4,7 @@ import Pepe from "./App";
 import "./assets/css/index.css";
 
 import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: "AIzaSyB0LvDTKKWfnOSQbmgL-5DVHUe6PAvkuTw",
@@ -15,7 +16,8 @@ const firebaseConfig = {
   measurementId: "G-7K60VYKR07",
 };
 
-initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
+export const db = getFirestore(app);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
