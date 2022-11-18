@@ -5,17 +5,27 @@ const CartContext = ({ children }) => {
   const [cart, setCart] = useState([]);
 
   const isInCart = (id) => {
-    const found = cart.findIndex((product) => product.id === id);
-    return found;
+    const pos = cart.findIndex((product) => product.id === id);
+    return pos;
   };
+
+  const addItem = (item, quantity) => {
+    const pos = isInCart(item.id);
+    if (pos === -1) {
+      setCart([...cart, { ...item, quantity }]);
+    } else {
+      const cartAux = [...cart];
+      cartAux[pos] = {
+        ...cartAux[pos],
+        quantity: cartAux[pos].quantity + quantity,
+      };
+      setCart(cartAux);
+    }
+  };
+
   const totalPrice = () => {
     cart.reduce((value, quantity) => value + quantity, 0);
   };
-  const addItem = (item, cantidad) => {};
-  const onAdd = (quantity) => {
-    alert("se agregaron " + quantity + " al carrito");
-  };
-
   const clear = () => setCart([]);
 
   const removeItem = (id) =>
@@ -26,14 +36,11 @@ const CartContext = ({ children }) => {
     <contextoGeneral.Provider
       value={{
         whiteMode,
-        setWhiteMode,
         cart,
-        setCart,
+        setWhiteMode,
         addItem,
         removeItem,
         clear,
-        isInCart,
-        onAdd,
       }}
     >
       {children}

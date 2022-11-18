@@ -7,10 +7,10 @@ import { contextoGeneral } from "../components/CartContext";
 import ItemCounter from "./ItemCounter";
 
 const ItemDetail = ({ productos }) => {
-  const { whiteMode, onAdd } = useContext(contextoGeneral);
+  const { whiteMode, addItem } = useContext(contextoGeneral);
 
   const onAddToCart = (quantity) => {
-    onAdd(quantity);
+    addItem(productos, quantity);
   };
 
   return (

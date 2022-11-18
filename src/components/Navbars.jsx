@@ -9,7 +9,7 @@ import MenuItem from "@mui/material/MenuItem";
 import Switch from "@mui/material/Switch";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import React, { useContext } from "react";
+import * as React from "react";
 import { Link } from "react-router-dom";
 import { contextoGeneral } from "../components/CartContext";
 import CartWidget from "./CartWidget";
@@ -24,7 +24,11 @@ const pages = [
 ];
 
 const Navbars = () => {
-  const { whiteMode, setWhiteMode } = useContext(contextoGeneral);
+  const { whiteMode, setWhiteMode, cart } = React.useContext(contextoGeneral);
+  const [cant, setCant] = React.useState(0);
+  React.useEffect(() => {
+    setCant(cart.reduce((acc, item) => acc + item.quantity, 0));
+  }, [cart]);
 
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
@@ -155,7 +159,10 @@ const Navbars = () => {
           ></Switch>
 
           <Box sx={{ flexGrow: 0 }}>
-            <CartWidget sx={{ color: whiteMode ? "#f9f9f9" : "#000" }} />
+            <CartWidget
+              quantity={cant}
+              sx={{ color: whiteMode ? "#f9f9f9" : "#000" }}
+            />
           </Box>
         </Toolbar>
       </Container>

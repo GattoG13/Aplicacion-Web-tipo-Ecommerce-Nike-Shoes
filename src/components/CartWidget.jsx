@@ -4,7 +4,7 @@ import { Button } from "@mui/material";
 import { contextoGeneral } from "../components/CartContext";
 import { Link } from "react-router-dom";
 
-const CartWidget = () => {
+const CartWidget = ({ quantity }) => {
   const { whiteMode } = useContext(contextoGeneral);
 
   return (
@@ -16,7 +16,7 @@ const CartWidget = () => {
           fullWidth={false}
           startIcon={<ShoppingCartOutlinedIcon />}
         >
-          0{" "}
+          {quantity}{" "}
         </Button>
       </Link>
     </div>
