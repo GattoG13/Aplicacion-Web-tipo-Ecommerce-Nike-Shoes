@@ -4,7 +4,7 @@ import React, { useContext } from "react";
 import { contextoGeneral } from "../components/CartContext";
 
 function ItemCart({ product }) {
-  const { whiteMode, removeItem, clear } = useContext(contextoGeneral);
+  const { whiteMode } = useContext(contextoGeneral);
 
   return (
     <Box
@@ -33,64 +33,6 @@ function ItemCart({ product }) {
           <Typography sx={{ color: whiteMode ? "#000" : "#f9f9f9" }}>
             Price: {product.price}
           </Typography>
-          <Box className="cart-content">
-            <Box sx={{ backgroundColor: whiteMode ? "#f9f9f9" : "#000" }}>
-              <Button
-                sx={{
-                  backgroundColor: whiteMode ? "#000" : "#f9f9f9",
-                  borderRadius: 2,
-                  "&:hover": {
-                    backgroundColor: "#inherit",
-                    color: "inherit",
-                  },
-                }}
-                variant="contained"
-                onClick={() => {
-                  removeItem();
-                }}
-              >
-                <Typography
-                  sx={{
-                    color: whiteMode ? "#f9f9f9" : "#000",
-                    "&:hover": {
-                      backgroundColor: "#inherit",
-                      color: "inherit",
-                    },
-                  }}
-                >
-                  Remove Item
-                </Typography>
-              </Button>
-            </Box>
-            <Box sx={{ backgroundColor: whiteMode ? "#f9f9f9" : "#000" }}>
-              <Button
-                sx={{
-                  backgroundColor: whiteMode ? "#000" : "#f9f9f9",
-                  borderRadius: 2,
-                  "&:hover": {
-                    backgroundColor: "#inherit",
-                    color: "inherit",
-                  },
-                }}
-                variant="contained"
-                onClick={() => {
-                  clear();
-                }}
-              >
-                <Typography
-                  sx={{
-                    color: whiteMode ? "#f9f9f9" : "#000",
-                    "&:hover": {
-                      backgroundColor: "#inherit",
-                      color: "inherit",
-                    },
-                  }}
-                >
-                  Clear Cart
-                </Typography>
-              </Button>
-            </Box>
-          </Box>
         </Box>
       ) : (
         <Box>"Loading..."</Box>
