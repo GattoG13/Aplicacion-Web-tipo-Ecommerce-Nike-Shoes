@@ -5,16 +5,13 @@ const CartContext = ({ children }) => {
   const [cart, setCart] = useState([]);
 
   const isInCart = (id) => {
-    const found = cart.find((product) => product.id === id);
-    return cart.includes(found);
+    const found = cart.findIndex((product) => product.id === id);
+    return found;
   };
   const totalPrice = () => {
     cart.reduce((value, quantity) => value + quantity, 0);
   };
-  const addItem = (item, cantidad) => {
-    isInCart() ? console.log("item found") : (item.quantity = cantidad);
-    setCart([...cart, item]);
-  };
+  const addItem = (item, cantidad) => {};
   const onAdd = (quantity) => {
     alert("se agregaron " + quantity + " al carrito");
   };

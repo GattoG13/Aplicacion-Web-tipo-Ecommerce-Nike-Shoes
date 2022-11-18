@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import { db } from "../index";
 import { collection, getDocs } from "firebase/firestore";
 import { Box } from "@mui/material";
+import "../assets/css/index.css";
 
 const ItemListContainer = () => {
   const { idcategory } = useParams();
