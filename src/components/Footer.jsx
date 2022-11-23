@@ -11,7 +11,7 @@ const Footer = () => {
   return (
     <Box
       className="footer-container"
-      sx={{ backgroundColor: whiteMode ? "#f9f9f9" : "#000" }}
+      sx={{ backgroundColor: whiteMode ? "#000" : "#f9f9f9" }}
     >
       <a className="instagram-icon" href="https://www.instagram.com/nike/">
         <InstagramIcon
@@ -23,7 +23,7 @@ const Footer = () => {
       <Box className="copyright-text">
         <Typography
           sx={{
-            color: whiteMode ? "#000" : "#f9f9f9",
+            color: whiteMode ? "#f9f9f9" : "#000",
             "&:hover": { color: "inherit" },
           }}
         >

@@ -12,7 +12,7 @@ const CartWidget = ({ quantity }) => {
       <Link to="/cart">
         <Button
           variant="outlinedSizeSmall"
-          sx={{ color: whiteMode ? "#000" : "#f9f9f9" }}
+          sx={{ color: whiteMode ? "#f9f9f9" : "#000" }}
           fullWidth={false}
           startIcon={<ShoppingCartOutlinedIcon />}
         >

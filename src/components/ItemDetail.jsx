@@ -15,29 +15,29 @@ const ItemDetail = ({ productos }) => {
 
   return (
     <Box
-      sx={{ backgroundColor: whiteMode ? "#f9f9f9" : "#000" }}
+      sx={{ backgroundColor: whiteMode ? "#000" : "#f9f9f9" }}
       className="itemdetail-container"
     >
       {productos.id ? (
         <Box
-          sx={{ backgroundColor: whiteMode ? "#f9f9f9" : "#000" }}
+          sx={{ backgroundColor: whiteMode ? "#000" : "#f9f9f9" }}
           className="itemdetail2-container"
           key={productos.id}
         >
           <img className="images" src={productos.pictureURL} alt="product" />
           <Typography
-            sx={{ color: whiteMode ? "#000" : "#f9f9f9" }}
+            sx={{ color: whiteMode ? "#f9f9f9" : "#000" }}
             variant="h5"
           >
             {productos.title}
           </Typography>
-          <Typography sx={{ color: whiteMode ? "#000" : "#f9f9f9" }}>
+          <Typography sx={{ color: whiteMode ? "#f9f9f9" : "#000" }}>
             Size: {productos.size}
           </Typography>
-          <Typography sx={{ color: whiteMode ? "#000" : "#f9f9f9" }}>
+          <Typography sx={{ color: whiteMode ? "#f9f9f9" : "#000" }}>
             Color: {productos.color}
           </Typography>
-          <Typography sx={{ color: whiteMode ? "#000" : "#f9f9f9" }}>
+          <Typography sx={{ color: whiteMode ? "#f9f9f9" : "#000" }}>
             Price: {productos.price}
           </Typography>
           <Box className="itembox1-details">

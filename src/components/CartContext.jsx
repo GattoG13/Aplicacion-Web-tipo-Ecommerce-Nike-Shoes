@@ -1,8 +1,9 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useState, useEffect } from "react";
 export const contextoGeneral = createContext();
 
 const CartContext = ({ children }) => {
   const [cart, setCart] = useState([]);
+  const [pay, setPay] = useState(0);
 
   const isInCart = (id) => {
     const pos = cart.findIndex((product) => product.id === id);
@@ -23,13 +24,21 @@ const CartContext = ({ children }) => {
     }
   };
 
-  const totalPrice = () => {
-    cart.reduce((value, quantity) => value + quantity, 0);
-  };
+  // const totalPrice = () => {
+  //   cart.reduce((value, quantity) => value + quantity, 0);
+  // };
   const clear = () => setCart([]);
 
   const removeItem = (id) =>
     setCart(cart.filter((product) => product.id !== id));
+
+  useEffect(() => {
+    const totalPay = cart.reduce(
+      (acc, item) => acc + item.quantity * item.price,
+      0
+    );
+    setPay(totalPay);
+  }, [cart]);
 
   const [whiteMode, setWhiteMode] = useState(false);
   return (
@@ -37,6 +46,7 @@ const CartContext = ({ children }) => {
       value={{
         whiteMode,
         cart,
+        pay,
         setWhiteMode,
         addItem,
         removeItem,

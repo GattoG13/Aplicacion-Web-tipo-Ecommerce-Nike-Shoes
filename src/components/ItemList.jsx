@@ -1,10 +1,7 @@
-import React, { useContext, useState } from "react";
+import React from "react";
 import Items from "./Items";
-import Box from "@mui/material/Box";
-import { contextoGeneral } from "../components/CartContext";
 
 const ItemList = ({ data }) => {
-  const { whiteMode } = useContext(contextoGeneral);
   return (
     <>
       <div>

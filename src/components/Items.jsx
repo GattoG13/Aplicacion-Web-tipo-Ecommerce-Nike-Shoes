@@ -11,30 +11,30 @@ const Items = ({ producto }) => {
   const { whiteMode } = useContext(contextoGeneral);
   return (
     <Box
-      sx={{ backgroundColor: whiteMode ? "#f9f9f9" : "#000" }}
+      sx={{ backgroundColor: whiteMode ? "#000" : "#f9f9f9" }}
       className="item-container"
     >
       <img className="images" src={producto.image} alt="product" />
-      <Typography sx={{ color: whiteMode ? "#000" : "#f9f9f9" }} variant="h5">
+      <Typography sx={{ color: whiteMode ? "#f9f9f9" : "#000" }} variant="h5">
         {producto.title}
       </Typography>
-      <Typography sx={{ color: whiteMode ? "#000" : "#f9f9f9" }}>
+      <Typography sx={{ color: whiteMode ? "#f9f9f9" : "#000" }}>
         Size: {producto.size}
       </Typography>
-      <Typography sx={{ color: whiteMode ? "#000" : "#f9f9f9" }}>
+      <Typography sx={{ color: whiteMode ? "#f9f9f9" : "#000" }}>
         Color: {producto.color}
       </Typography>
-      <Typography sx={{ color: whiteMode ? "#000" : "#f9f9f9" }}>
+      <Typography sx={{ color: whiteMode ? "#f9f9f9" : "#000" }}>
         Price: {producto.price}
       </Typography>
       <Box className="details-btn">
         <Link to={`/item/${producto.id}`}>
           <Button
             sx={{
-              backgroundColor: whiteMode ? "#000" : "#f9f9f9",
+              backgroundColor: whiteMode ? "#f9f9f9" : "#000",
               borderRadius: 2,
               "&:hover": {
-                backgroundColor: "#f9f9f9",
+                backgroundColor: "#000",
                 color: "inherit",
               },
             }}
@@ -43,7 +43,7 @@ const Items = ({ producto }) => {
           >
             <Typography
               sx={{
-                color: whiteMode ? "#f9f9f9" : "#000",
+                color: whiteMode ? "#000" : "#f9f9f9",
                 "&:hover": {
                   backgroundColor: "inherit",
                   color: "inherit",
