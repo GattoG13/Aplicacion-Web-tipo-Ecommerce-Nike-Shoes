@@ -1,4 +1,4 @@
-import { Box, Button, Grid, Link, Typography } from "@mui/material";
+import { Box, Button, Link, Typography } from "@mui/material";
 import React, { useContext } from "react";
 import "../assets/css/index.css";
 import { contextoGeneral } from "../components/CartContext";
@@ -33,6 +33,37 @@ function Cart() {
       {cart.map((product) => (
         <ItemCart key={product.id} product={product} />
       ))}
+      <br />
+      <br />
+      <Link
+        to="/checkout"
+        sx={{ backgroundColor: whiteMode ? "#000" : "#f9f9f9" }}
+      >
+        <Button
+          sx={{
+            backgroundColor: whiteMode ? "#f9f9f9" : "#000",
+            borderRadius: 2,
+            "&:hover": {
+              backgroundColor: "#inherit",
+              color: "inherit",
+            },
+          }}
+          variant="contained"
+        >
+          <Typography
+            sx={{
+              color: whiteMode ? "#000" : "#f9f9f9",
+              "&:hover": {
+                backgroundColor: "#inherit",
+                color: "inherit",
+              },
+            }}
+          >
+            Proceed to checkout
+          </Typography>
+        </Button>
+      </Link>
+      <br />
       <br />
       <Box className="cart-content">
         <Box sx={{ backgroundColor: whiteMode ? "#000" : "#f9f9f9" }}>

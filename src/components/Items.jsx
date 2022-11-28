@@ -14,7 +14,7 @@ const Items = ({ producto }) => {
       sx={{ backgroundColor: whiteMode ? "#000" : "#f9f9f9" }}
       className="item-container"
     >
-      <img className="images" src={producto.image} alt="product" />
+      <img className="images" src={producto.pictureURL} alt="product" />
       <Typography sx={{ color: whiteMode ? "#f9f9f9" : "#000" }} variant="h5">
         {producto.title}
       </Typography>

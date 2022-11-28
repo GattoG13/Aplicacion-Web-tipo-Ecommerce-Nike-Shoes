@@ -1,6 +1,5 @@
 import { Box, Button, Typography } from "@mui/material";
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
 import { contextoGeneral } from "../components/CartContext";
 
 function ItemCart({ product }) {
@@ -58,39 +57,10 @@ function ItemCart({ product }) {
                   },
                 }}
               >
-                Remove Item
+                Remove from Cart
               </Typography>
             </Button>
           </Box>
-          <br />
-          <Link
-            to="/checkout"
-            sx={{ backgroundColor: whiteMode ? "#000" : "#f9f9f9" }}
-          >
-            <Button
-              sx={{
-                backgroundColor: whiteMode ? "#f9f9f9" : "#000",
-                borderRadius: 2,
-                "&:hover": {
-                  backgroundColor: "#inherit",
-                  color: "inherit",
-                },
-              }}
-              variant="contained"
-            >
-              <Typography
-                sx={{
-                  color: whiteMode ? "#000" : "#f9f9f9",
-                  "&:hover": {
-                    backgroundColor: "#inherit",
-                    color: "inherit",
-                  },
-                }}
-              >
-                Proceed to checkout
-              </Typography>
-            </Button>
-          </Link>
         </Box>
       ) : (
         <Box>"Loading..."</Box>

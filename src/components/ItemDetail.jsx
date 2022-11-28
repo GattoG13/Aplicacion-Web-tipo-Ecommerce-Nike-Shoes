@@ -1,6 +1,6 @@
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
+import CircularProgress from "@mui/material/CircularProgress";
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
 import "../assets/css/index.css";
 import "../assets/css/ItemCounter.css";
 import { contextoGeneral } from "../components/CartContext";
@@ -47,7 +47,7 @@ const ItemDetail = ({ productos }) => {
           </Box>
         </Box>
       ) : (
-        <Box>"Loading..."</Box>
+        <CircularProgress />
       )}
     </Box>
   );
