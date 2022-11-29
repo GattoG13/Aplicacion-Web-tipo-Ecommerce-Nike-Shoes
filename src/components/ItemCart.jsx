@@ -2,7 +2,7 @@ import { Box, Button, Typography } from "@mui/material";
 import React, { useContext } from "react";
 import { contextoGeneral } from "../components/CartContext";
 
-function ItemCart({ product }) {
+const ItemCart = ({ product }) => {
   const { darkMode, removeItem } = useContext(contextoGeneral);
 
   const handleRemoveItem = (id) => {
@@ -70,6 +70,6 @@ function ItemCart({ product }) {
       )}
     </Box>
   );
-}
+};
 
 export default ItemCart;

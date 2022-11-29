@@ -4,7 +4,7 @@ import "../assets/css/index.css";
 import { contextoGeneral } from "../components/CartContext";
 import ItemCart from "./ItemCart";
 
-function Cart() {
+const Cart = () => {
   const { cart, clear, darkMode } = useContext(contextoGeneral);
   if (cart.length === 0) {
     return (
@@ -97,6 +97,6 @@ function Cart() {
       </Box>
     </Box>
   );
-}
+};
 
 export default Cart;
