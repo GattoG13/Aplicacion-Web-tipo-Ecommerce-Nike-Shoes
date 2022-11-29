@@ -8,30 +8,30 @@ import { contextoGeneral } from "../components/CartContext";
 import Typography from "@mui/material/Typography";
 
 const Items = ({ producto }) => {
-  const { whiteMode } = useContext(contextoGeneral);
+  const { darkMode } = useContext(contextoGeneral);
   return (
     <Box
-      sx={{ backgroundColor: whiteMode ? "#000" : "#f9f9f9" }}
+      sx={{ backgroundColor: darkMode ? "#000" : "#f9f9f9" }}
       className="item-container"
     >
       <img className="images" src={producto.pictureURL} alt="product" />
-      <Typography sx={{ color: whiteMode ? "#f9f9f9" : "#000" }} variant="h5">
+      <Typography sx={{ color: darkMode ? "#f9f9f9" : "#000" }} variant="h5">
         {producto.title}
       </Typography>
-      <Typography sx={{ color: whiteMode ? "#f9f9f9" : "#000" }}>
-        Size: {producto.size}
+      <Typography sx={{ color: darkMode ? "#f9f9f9" : "#000" }}>
+        Sizes: {JSON.stringify(producto.size)}
       </Typography>
-      <Typography sx={{ color: whiteMode ? "#f9f9f9" : "#000" }}>
+      <Typography sx={{ color: darkMode ? "#f9f9f9" : "#000" }}>
         Color: {producto.color}
       </Typography>
-      <Typography sx={{ color: whiteMode ? "#f9f9f9" : "#000" }}>
+      <Typography sx={{ color: darkMode ? "#f9f9f9" : "#000" }}>
         Price: {producto.price}
       </Typography>
       <Box className="details-btn">
         <Link to={`/item/${producto.id}`}>
           <Button
             sx={{
-              backgroundColor: whiteMode ? "#f9f9f9" : "#000",
+              backgroundColor: darkMode ? "#f9f9f9" : "#000",
               borderRadius: 2,
               "&:hover": {
                 backgroundColor: "#000",
@@ -43,7 +43,7 @@ const Items = ({ producto }) => {
           >
             <Typography
               sx={{
-                color: whiteMode ? "#000" : "#f9f9f9",
+                color: darkMode ? "#000" : "#f9f9f9",
                 "&:hover": {
                   backgroundColor: "inherit",
                   color: "inherit",

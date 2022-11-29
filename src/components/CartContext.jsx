@@ -40,11 +40,11 @@ const CartContext = ({ children }) => {
     setPay(totalPay);
   }, [cart]);
 
-  const [whiteMode, setWhiteMode] = useState(false);
+  const [darkMode, setWhiteMode] = useState(false);
   return (
     <contextoGeneral.Provider
       value={{
-        whiteMode,
+        darkMode,
         cart,
         pay,
         setWhiteMode,

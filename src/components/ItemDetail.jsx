@@ -7,7 +7,7 @@ import { contextoGeneral } from "../components/CartContext";
 import ItemCounter from "./ItemCounter";
 
 const ItemDetail = ({ productos }) => {
-  const { whiteMode, addItem } = useContext(contextoGeneral);
+  const { darkMode, addItem } = useContext(contextoGeneral);
 
   const onAddToCart = (quantity) => {
     addItem(productos, quantity);
@@ -15,29 +15,29 @@ const ItemDetail = ({ productos }) => {
 
   return (
     <Box
-      sx={{ backgroundColor: whiteMode ? "#000" : "#f9f9f9" }}
+      sx={{ backgroundColor: darkMode ? "#000" : "#f9f9f9" }}
       className="itemdetail-container"
     >
       {productos.id ? (
         <Box
-          sx={{ backgroundColor: whiteMode ? "#000" : "#f9f9f9" }}
+          sx={{ backgroundColor: darkMode ? "#000" : "#f9f9f9" }}
           className="itemdetail2-container"
           key={productos.id}
         >
           <img className="images" src={productos.pictureURL} alt="product" />
           <Typography
-            sx={{ color: whiteMode ? "#f9f9f9" : "#000" }}
+            sx={{ color: darkMode ? "#f9f9f9" : "#000" }}
             variant="h5"
           >
             {productos.title}
           </Typography>
-          <Typography sx={{ color: whiteMode ? "#f9f9f9" : "#000" }}>
-            Size: {productos.size}
+          <Typography sx={{ color: darkMode ? "#f9f9f9" : "#000" }}>
+            Sizes: {JSON.stringify(productos.size)}
           </Typography>
-          <Typography sx={{ color: whiteMode ? "#f9f9f9" : "#000" }}>
+          <Typography sx={{ color: darkMode ? "#f9f9f9" : "#000" }}>
             Color: {productos.color}
           </Typography>
-          <Typography sx={{ color: whiteMode ? "#f9f9f9" : "#000" }}>
+          <Typography sx={{ color: darkMode ? "#f9f9f9" : "#000" }}>
             Price: {productos.price}
           </Typography>
           <Box className="itembox1-details">

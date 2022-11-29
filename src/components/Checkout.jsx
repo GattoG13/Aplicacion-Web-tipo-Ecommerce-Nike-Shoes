@@ -7,7 +7,7 @@ import { contextoGeneral } from "../components/CartContext";
 import { db } from "../index";
 
 const Checkout = () => {
-  const { cart, pay, whiteMode } = useContext(contextoGeneral);
+  const { cart, pay, darkMode } = useContext(contextoGeneral);
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
@@ -34,12 +34,12 @@ const Checkout = () => {
   return (
     <Box
       className="checkout-container"
-      sx={{ backgroundColor: whiteMode ? "#000" : "#f9f9f9" }}
+      sx={{ backgroundColor: darkMode ? "#000" : "#f9f9f9" }}
     >
       <Typography
         sx={{
-          backgroundColor: whiteMode ? "#000" : "#f9f9f9",
-          color: whiteMode ? "#f9f9f9" : "#000",
+          backgroundColor: darkMode ? "#000" : "#f9f9f9",
+          color: darkMode ? "#f9f9f9" : "#000",
         }}
         variant="h5"
       >
@@ -50,14 +50,14 @@ const Checkout = () => {
       </Typography>
       <Typography
         sx={{
-          backgroundColor: whiteMode ? "#000" : "#f9f9f9",
-          color: whiteMode ? "#f9f9f9" : "#000",
+          backgroundColor: darkMode ? "#000" : "#f9f9f9",
+          color: darkMode ? "#f9f9f9" : "#000",
         }}
       >
         TOTAL AMOUNT: {pay}
       </Typography>
       <TextField
-        sx={{ color: whiteMode ? "f9f9f9" : "#f9f9f9" }}
+        sx={{ color: darkMode ? "f9f9f9" : "#f9f9f9" }}
         placeholder="name"
         value={name}
         onChange={(e) => setName(e.target.value)}
@@ -85,7 +85,7 @@ const Checkout = () => {
 
       <Button
         sx={{
-          backgroundColor: whiteMode ? "#f9f9f9" : "#000",
+          backgroundColor: darkMode ? "#f9f9f9" : "#000",
           borderRadius: 2,
           "&:hover": {
             backgroundColor: "#inherit",
@@ -98,7 +98,7 @@ const Checkout = () => {
         {" "}
         <Typography
           sx={{
-            color: whiteMode ? "#000" : "#f9f9f9",
+            color: darkMode ? "#000" : "#f9f9f9",
             borderRadius: 2,
             "&:hover": {
               backgroundColor: "#inherit",

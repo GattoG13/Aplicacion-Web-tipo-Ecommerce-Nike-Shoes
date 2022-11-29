@@ -24,7 +24,7 @@ const pages = [
 ];
 
 const Navbars = () => {
-  const { whiteMode, setWhiteMode, cart } = React.useContext(contextoGeneral);
+  const { darkMode, setWhiteMode, cart } = React.useContext(contextoGeneral);
   const [cant, setCant] = React.useState(0);
   React.useEffect(() => {
     setCant(cart.reduce((acc, item) => acc + item.quantity, 0));
@@ -50,7 +50,7 @@ const Navbars = () => {
 
   return (
     <AppBar
-      sx={{ backgroundColor: whiteMode ? "#000" : "#f9f9f9" }}
+      sx={{ backgroundColor: darkMode ? "#000" : "#ececec" }}
       position="static"
     >
       <Container maxWidth="xl">
@@ -69,7 +69,7 @@ const Navbars = () => {
               fontFamily: "monospace",
               fontWeight: 700,
               letterSpacing: ".1rem",
-              color: whiteMode ? "#f9f9f9" : "#000",
+              color: darkMode ? "#ececec" : "#000",
               textDecoration: "none",
             }}
           >
@@ -78,7 +78,7 @@ const Navbars = () => {
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
-              sx={{ color: whiteMode ? "#f9f9f9" : "#000" }}
+              sx={{ color: darkMode ? "#ececec" : "#000" }}
               size="large"
               aria-label="account of current user"
               aria-controls="menu-appbar"
@@ -128,7 +128,7 @@ const Navbars = () => {
               fontFamily: "monospace",
               fontWeight: 700,
               letterSpacing: ".2rem",
-              color: whiteMode ? "#f9f9f9" : "#000",
+              color: darkMode ? "#ececec" : "#000",
               textDecoration: "none",
             }}
           >
@@ -150,12 +150,12 @@ const Navbars = () => {
               </Button>
             ))}
           </Box>
-          <Typography sx={{ color: whiteMode ? "#f9f9f9" : "#000" }}>
+          <Typography sx={{ color: darkMode ? "#ececec" : "#000" }}>
             Dark Mode{" "}
           </Typography>
           <Switch
             color="secondary"
-            onClick={() => setWhiteMode(!whiteMode)}
+            onClick={() => setWhiteMode(!darkMode)}
           ></Switch>
 
           <Box sx={{ flexGrow: 0 }}>

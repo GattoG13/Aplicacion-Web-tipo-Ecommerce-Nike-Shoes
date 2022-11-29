@@ -5,14 +5,14 @@ import { contextoGeneral } from "../components/CartContext";
 import { Link } from "react-router-dom";
 
 const CartWidget = ({ quantity }) => {
-  const { whiteMode } = useContext(contextoGeneral);
+  const { darkMode } = useContext(contextoGeneral);
 
   return (
     <div>
       <Link to="/cart">
         <Button
           variant="outlinedSizeSmall"
-          sx={{ color: whiteMode ? "#f9f9f9" : "#000" }}
+          sx={{ color: darkMode ? "#f9f9f9" : "#000" }}
           fullWidth={false}
           startIcon={<ShoppingCartOutlinedIcon />}
         >

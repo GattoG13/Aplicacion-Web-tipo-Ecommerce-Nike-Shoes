@@ -6,12 +6,12 @@ import "../assets/css/Footer.css";
 
 // Son component
 const Footer = () => {
-  const { whiteMode } = useContext(contextoGeneral);
+  const { darkMode } = useContext(contextoGeneral);
 
   return (
     <Box
       className="footer-container"
-      sx={{ backgroundColor: whiteMode ? "#000" : "#f9f9f9" }}
+      sx={{ backgroundColor: darkMode ? "#000" : "#f9f9f9" }}
     >
       <a className="instagram-icon" href="https://www.instagram.com/nike/">
         <InstagramIcon
@@ -23,7 +23,7 @@ const Footer = () => {
       <Box className="copyright-text">
         <Typography
           sx={{
-            color: whiteMode ? "#f9f9f9" : "#000",
+            color: darkMode ? "#f9f9f9" : "#000",
             "&:hover": { color: "inherit" },
           }}
         >

@@ -3,40 +3,43 @@ import React, { useContext } from "react";
 import { contextoGeneral } from "../components/CartContext";
 
 function ItemCart({ product }) {
-  const { whiteMode, removeItem } = useContext(contextoGeneral);
+  const { darkMode, removeItem } = useContext(contextoGeneral);
 
+  const handleRemoveItem = (id) => {
+    removeItem(id);
+  };
   return (
     <Box
-      sx={{ backgroundColor: whiteMode ? "#000" : "#f9f9f9" }}
+      sx={{ backgroundColor: darkMode ? "#000" : "#f9f9f9" }}
       className="itemcart-container"
     >
       {product.id ? (
         <Box
-          sx={{ backgroundColor: whiteMode ? "#000" : "#f9f9f9" }}
+          sx={{ backgroundColor: darkMode ? "#000" : "#f9f9f9" }}
           className="itemcart2-container"
           key={product.id}
         >
           <img className="images" src={product.pictureURL} alt="product" />
           <Typography
-            sx={{ color: whiteMode ? "#f9f9f9" : "#000" }}
+            sx={{ color: darkMode ? "#f9f9f9" : "#000" }}
             variant="h5"
           >
             {product.title}
           </Typography>
-          <Typography sx={{ color: whiteMode ? "#f9f9f9" : "#000" }}>
-            Size: {product.size}
+          <Typography sx={{ color: darkMode ? "#f9f9f9" : "#000" }}>
+            Sizes: {JSON.stringify(product.size)}
           </Typography>
-          <Typography sx={{ color: whiteMode ? "#f9f9f9" : "#000" }}>
+          <Typography sx={{ color: darkMode ? "#f9f9f9" : "#000" }}>
             Color: {product.color}
           </Typography>
-          <Typography sx={{ color: whiteMode ? "#f9f9f9" : "#000" }}>
+          <Typography sx={{ color: darkMode ? "#f9f9f9" : "#000" }}>
             Price: {product.price}
           </Typography>
           <br />
-          <Box sx={{ backgroundColor: whiteMode ? "#000" : "#f9f9f9" }}>
+          <Box sx={{ backgroundColor: darkMode ? "#000" : "#f9f9f9" }}>
             <Button
               sx={{
-                backgroundColor: whiteMode ? "#f9f9f9" : "#000",
+                backgroundColor: darkMode ? "#f9f9f9" : "#000",
                 borderRadius: 2,
                 "&:hover": {
                   backgroundColor: "#inherit",
@@ -45,12 +48,12 @@ function ItemCart({ product }) {
               }}
               variant="contained"
               onClick={() => {
-                removeItem();
+                handleRemoveItem(product.id);
               }}
             >
               <Typography
                 sx={{
-                  color: whiteMode ? "#000" : "#f9f9f9",
+                  color: darkMode ? "#000" : "#f9f9f9",
                   "&:hover": {
                     backgroundColor: "#inherit",
                     color: "inherit",
