@@ -10,7 +10,6 @@ import "../assets/css/index.css";
 const ItemListContainer = () => {
   const { idcategory } = useParams();
   const [data, setData] = useState([]);
-  console.log(data);
   useEffect(() => {
     const products = collection(db, "products");
     getDocs(products).then((res) => {

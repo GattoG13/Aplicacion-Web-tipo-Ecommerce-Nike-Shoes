@@ -1,4 +1,5 @@
-import { Box, Button, Link, Typography } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
+import { Link } from "react-router-dom";
 import React, { useContext } from "react";
 import "../assets/css/index.css";
 import { contextoGeneral } from "../components/CartContext";

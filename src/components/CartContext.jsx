@@ -2,7 +2,9 @@ import React, { createContext, useState, useEffect } from "react";
 export const contextoGeneral = createContext();
 
 const CartContext = ({ children }) => {
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState(
+    JSON.parse(localStorage.getItem("cart")) || []
+  );
   const [pay, setPay] = useState(0);
 
   const isInCart = (id) => {
@@ -24,9 +26,20 @@ const CartContext = ({ children }) => {
     }
   };
 
-  // const totalPrice = () => {
-  //   cart.reduce((value, quantity) => value + quantity, 0);
-  // };
+  const validateEmail = (email) => {
+    const emailReg =
+      /^[a-zA-Z0-9.!#$%&'+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)$/;
+    if (emailReg.test(email) === false) {
+      alert(`El mail ingresado no es valido`);
+      return false;
+    }
+    return true;
+  };
+
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  });
+
   const clear = () => setCart([]);
 
   const removeItem = (id) =>
@@ -51,6 +64,7 @@ const CartContext = ({ children }) => {
         addItem,
         removeItem,
         clear,
+        validateEmail,
       }}
     >
       {children}
