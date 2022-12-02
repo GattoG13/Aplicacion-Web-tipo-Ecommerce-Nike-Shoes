@@ -9,7 +9,7 @@
   color: white;
   text-align: center;
 }
-.instagram-icon {
-  width: 150px;
-  height: 150px;
+.icons {
+  display: flex;
+  justify-content: space-around;
 }
