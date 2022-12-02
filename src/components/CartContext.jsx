@@ -1,4 +1,6 @@
 import React, { createContext, useState, useEffect } from "react";
+import Swal from "sweetalert2";
+
 export const contextoGeneral = createContext();
 
 const CartContext = ({ children }) => {
@@ -30,7 +32,11 @@ const CartContext = ({ children }) => {
     const emailReg =
       /^[a-zA-Z0-9.!#$%&'+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)$/;
     if (emailReg.test(email) === false) {
-      alert(`El mail ingresado no es valido`);
+      Swal.fire({
+        icon: "error",
+        title: "Email",
+        text: "Please verify your email entry",
+      });
       return false;
     }
     return true;

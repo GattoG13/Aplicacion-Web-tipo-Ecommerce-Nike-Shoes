@@ -1,12 +1,13 @@
 import { Button, TextField, Typography } from "@mui/material";
+import { toast } from "react-toastify";
 import Swal from "sweetalert2";
-import CircularProgress from "@mui/material/CircularProgress";
 import { Box } from "@mui/system";
 import { addDoc, collection } from "firebase/firestore";
 import React, { useContext, useState } from "react";
 import "../assets/css/index.css";
 import { contextoGeneral } from "../components/CartContext";
 import { db } from "../index";
+import { Link } from "react-router-dom";
 
 const Checkout = () => {
   const { cart, pay, darkMode, validateEmail, clear } =
@@ -26,8 +27,19 @@ const Checkout = () => {
     };
 
     if (name === "" || phone === "" || email === "" || credit === "") {
-      alert("invalid data");
+      Swal.fire({
+        icon: "error",
+        title: "Invalid Data!",
+        text: "Please verify the data before proceeding",
+      });
       return;
+    }
+    if (cart === "") {
+      Swal.fire({
+        icon: "error",
+        title: "Invalid Cart is empty!",
+        text: "Please add items to the cart to proceed",
+      });
     }
     if (validateEmail(email) === false) {
       return;
@@ -37,9 +49,10 @@ const Checkout = () => {
       setOrder(finishOrder.id);
     });
     Swal.fire({
-      position: "top-end",
+      position: "center",
       icon: "success",
-      title: "Thank you" + name + " your purchase has been processed correctly",
+      title:
+        "Thank you " + name + " your purchase has been processed correctly",
       showConfirmButton: false,
       timer: 1500,
     });
@@ -135,10 +148,42 @@ const Checkout = () => {
           </Button>
         </Box>
       ) : (
-        <Box classname="recipe-container">
-          Gracias {name} por tu compra.
-          <br />
-          Tu numero de pedido es {order}
+        <Box>
+          <Box
+            sx={{ backgroundColor: darkMode ? "#000" : "#b3b3b3" }}
+            className="recipe-container"
+          >
+            <Typography sx={{ color: darkMode ? "#f9f9f9" : "#000" }}>
+              Thank you {name} for your purchase.
+              <br />
+              Your order's number is {order}
+              <br />
+              Soon we'll send you the recipe order to: {email}
+              <br />
+            </Typography>
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <Link to="/">
+                <Button
+                  sx={{
+                    backgroundColor: darkMode ? "#f9f9f9" : "#000",
+                    borderRadius: 2,
+                    "&:hover": {
+                      backgroundColor: "#000",
+                      color: "inherit",
+                    },
+                  }}
+                >
+                  Return Home
+                </Button>
+              </Link>
+            </Box>
+          </Box>
         </Box>
       )}
     </>

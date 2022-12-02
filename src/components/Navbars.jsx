@@ -19,8 +19,6 @@ const pages = [
   { label: "Home", link: "/" },
   { label: "AirMax", link: "/category/Airmax" },
   { label: "Jordan", link: "/category/Jordan" },
-  { label: "Checkout", link: "/checkout" },
-  { label: "Contact", link: "/contact" },
 ];
 
 const Navbars = () => {
@@ -117,10 +115,10 @@ const Navbars = () => {
           </Box>
 
           <Typography
-            variant="h5"
+            variant="h6"
             noWrap
             component="a"
-            href=""
+            href="/"
             sx={{
               mr: 2,
               display: { xs: "flex", md: "none" },
@@ -134,6 +132,7 @@ const Navbars = () => {
           >
             NIKE
           </Typography>
+
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
               <Button

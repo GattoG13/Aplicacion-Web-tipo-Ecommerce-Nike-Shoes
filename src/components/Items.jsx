@@ -11,7 +11,7 @@ import Typography from "@mui/material/Typography";
 const Items = ({ producto }) => {
   const { darkMode } = useContext(contextoGeneral);
   return (
-    <>
+    <Box className="item-wholecontainer">
       {producto ? (
         <Box
           sx={{ backgroundColor: darkMode ? "#000" : "#f9f9f9" }}
@@ -66,7 +66,7 @@ const Items = ({ producto }) => {
       ) : (
         <CircularProgress />
       )}
-    </>
+    </Box>
   );
 };
 
