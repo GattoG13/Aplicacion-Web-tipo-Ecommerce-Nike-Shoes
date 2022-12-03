@@ -31,8 +31,9 @@ code {
   height: 100%;
   box-shadow: 1px 1px 1px 1px #888888;
   padding-left: 3px;
-  padding-bottom: 80px;
+  padding-bottom: 75px;
 }
+
 .itemdetail-container {
   display: flex;
   justify-content: center;
