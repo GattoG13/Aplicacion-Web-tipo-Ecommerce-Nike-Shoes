@@ -5,7 +5,7 @@ import "../assets/css/ItemCounter.css";
 import { contextoGeneral } from "../components/CartContext";
 
 const ItemCounter = ({ stock, initial, onAddToCart }) => {
-  const { whiteMode } = useContext(contextoGeneral);
+  const { darkMode } = useContext(contextoGeneral);
 
   const [cont, setCont] = useState(parseInt(initial));
   const sumar = () => {
@@ -36,12 +36,12 @@ const ItemCounter = ({ stock, initial, onAddToCart }) => {
       >
         +
       </Button>
-      <Link sx={{ color: whiteMode ? "#000" : "#f9f9f9" }}>
+      <Link sx={{ backgroundColor: darkMode ? "#000" : "#f9f9f9" }}>
         <Button
           sx={{
-            backgroundColor: whiteMode ? "#000" : "#f9f9f9",
+            backgroundColor: darkMode ? "#f9f9f9" : "#000",
             borderRadius: 2,
-            color: whiteMode ? "#f9f9f9" : "#000",
+            color: darkMode ? "#000" : "#f9f9f9",
             "&:hover": {
               backgroundColor: "inherit",
               color: "inherit",

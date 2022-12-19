@@ -1,4 +1,5 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, Button } from "@mui/material";
+import { Link } from "react-router-dom";
 import CircularProgress from "@mui/material/CircularProgress";
 import React, { useContext } from "react";
 import "../assets/css/index.css";
@@ -44,6 +45,35 @@ const ItemDetail = ({ productos }) => {
             <Box className="itemcount-details">
               <ItemCounter initial={0} stock={10} onAddToCart={onAddToCart} />
             </Box>
+            <Link
+              sx={{ backgroundColor: darkMode ? "#f9f9f9" : "#000" }}
+              to="/cart"
+            >
+              <Button
+                sx={{
+                  backgroundColor: darkMode ? "#f9f9f9" : "#000",
+                  borderRadius: 2,
+                  "&:hover": {
+                    backgroundColor: "inherit",
+                    color: "inherit",
+                  },
+                }}
+              >
+                {" "}
+                <Typography
+                  sx={{
+                    color: darkMode ? "#000" : "#f9f9f9",
+                    borderRadius: 2,
+                    "&:hover": {
+                      backgroundColor: "inherit",
+                      color: "inherit",
+                    },
+                  }}
+                >
+                  Go to Cart
+                </Typography>
+              </Button>
+            </Link>
           </Box>
         </Box>
       ) : (
